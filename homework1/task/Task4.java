@@ -12,31 +12,49 @@
 */
 package homework1.task;
 
+import java.util.Scanner;
+
 public class Task4 {
     public static void run() {
-        System.out.println(whatDigits("?5??5", 3));
-    }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nI'll try to solve the task  q + w = e, where q, w, у  integer and >= 0 \n" +
+                         "You can use ? to hide one digit in all numbers\n " +
+                         "like 2? + ?5 = 69\n\n");
+        
+        System.out.print("Input q > ");
+        String firstNumber = scanner.nextLine();
 
+        System.out.print("Input w > ");
+        String secondNumber = scanner.nextLine();
+
+        System.out.print("Input e > ");
+        String thirdNumber = scanner.nextLine();
+
+        scanner.close();
+
+        boolean solve = false;
+        for (int i = 1; i < 10; i++) {
+            if ( whatDigits(firstNumber, i) + whatDigits(secondNumber, i) == whatDigits(thirdNumber, i) ) {
+                System.out.println("I hope your digit is " + i);
+                solve = true;
+            }
+        }
+        if (!solve) { System.out.println("Sorry, I cant solve your task..."); }
+
+    }
 
     public static int whatDigits(String testedNumber, int multi) {
         char toFind = '?';
-        System.out.println(testedNumber.length());
         int power = testedNumber.length() - 1;
         int result = 0;
         for (int i = testedNumber.length() - 1; i >= 0; i--) {
-            System.out.println("27 i = " + i);
             if (testedNumber.charAt(i) == toFind) {
                 result += (int) (Math.pow(10, (power - i))) * multi;
-                System.out.println("30 i = " + i + "result = " + result);
             } else {
                 result += Character.getNumericValue(testedNumber.charAt(i)) * (Math.pow(10, (power - i)));
-                System.out.println("33 i = " + i + " result = " + result);
-                System.out.println("34 testedNumber.charAt(i) = " +testedNumber.charAt(i));
-
             }
-
         }
         return result;
     }
-    
+
 }
