@@ -4,6 +4,6 @@ import homework1.task.*;
 
 public class Main {
     public static void main(String[] args) {
-        Task3.run();
+        Task4.run();
     }
 }

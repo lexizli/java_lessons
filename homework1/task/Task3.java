@@ -35,6 +35,7 @@ public class Task3 {
                 break;
             }
         }
+        scanner.close();
     }
 
 }
