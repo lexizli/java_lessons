@@ -1,0 +1,14 @@
+log.config
+task3.txt
+lesson3
+.DS_Store
+Task7.txt
+homework2
+seminar_two
+seminar_one
+loggingTest
+homework1
+program.java
+test.txt
+.git
+log.0.0.txt
