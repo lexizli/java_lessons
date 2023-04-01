@@ -1,0 +1,36 @@
+апр. 01, 2023 12:12:08 PM homework2.task.task1 sortBubbleOptimized
+INFO: 
+Step = 0	0  11  21  9  12  17  0  1  22  14  10  12  25  
+апр. 01, 2023 12:12:08 PM homework2.task.task1 sortBubbleOptimized
+INFO: 
+Step = 1	0  11  9  12  17  0  1  21  14  10  12  22  25  
+апр. 01, 2023 12:12:08 PM homework2.task.task1 sortBubbleOptimized
+INFO: 
+Step = 2	0  9  11  12  0  1  17  14  10  12  21  22  25  
+апр. 01, 2023 12:12:08 PM homework2.task.task1 sortBubbleOptimized
+INFO: 
+Step = 3	0  9  11  0  1  12  14  10  12  17  21  22  25  
+апр. 01, 2023 12:12:08 PM homework2.task.task1 sortBubbleOptimized
+INFO: 
+Step = 4	0  9  0  1  11  12  10  12  14  17  21  22  25  
+апр. 01, 2023 12:12:08 PM homework2.task.task1 sortBubbleOptimized
+INFO: 
+Step = 5	0  0  1  9  11  10  12  12  14  17  21  22  25  
+апр. 01, 2023 12:12:08 PM homework2.task.task1 sortBubbleOptimized
+INFO: 
+Step = 6	0  0  1  9  10  11  12  12  14  17  21  22  25  
+апр. 01, 2023 12:12:08 PM homework2.task.task1 sortBubbleOptimized
+INFO: 
+Step = 7	0  0  1  9  10  11  12  12  14  17  21  22  25  
+апр. 01, 2023 12:12:08 PM homework2.task.task1 sortBubbleOptimized
+INFO: 
+Step = 8	0  0  1  9  10  11  12  12  14  17  21  22  25  
+апр. 01, 2023 12:12:08 PM homework2.task.task1 sortBubbleOptimized
+INFO: 
+Step = 9	0  0  1  9  10  11  12  12  14  17  21  22  25  
+апр. 01, 2023 12:12:08 PM homework2.task.task1 sortBubbleOptimized
+INFO: 
+Step = 10	0  0  1  9  10  11  12  12  14  17  21  22  25  
+апр. 01, 2023 12:12:08 PM homework2.task.task1 sortBubbleOptimized
+INFO: 
+Step = 11	0  0  1  9  10  11  12  12  14  17  21  22  25  
