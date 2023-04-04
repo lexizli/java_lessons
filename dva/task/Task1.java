@@ -1,4 +1,4 @@
-package seminar_one.task;
+package dva.task;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

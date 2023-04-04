@@ -5,6 +5,8 @@ public class People {
     private int mark;
     private String subject;
 
+public People(){};
+
     public People(String name, int mark, String subject) {
         this.name = name;
         this.mark = mark;
@@ -14,7 +16,10 @@ public class People {
     public String getName() {
         return name;
     }
-
+    
+    public void setName(String name){
+        this.name = name;
+    }
     public int getMark() {
         return mark;
     }

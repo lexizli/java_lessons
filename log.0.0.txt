@@ -142,3 +142,19 @@ Step = 10	2  7  8  8  9  10  12  16  16  20  21  23  24
 апр. 01, 2023 12:11:15 PM homework2.task.task1 sortBubbleOptimized
 INFO: 
 Step = 11	2  7  8  8  9  10  12  16  16  20  21  23  24  
+апр. 02, 2023 8:56:30 AM seminar_two.task.task3 getFilesInFolder
+INFO: Some message
+апр. 02, 2023 8:56:30 AM seminar_two.task.task3 getFilesInFolder
+INFO: Some message
+апр. 02, 2023 8:56:30 AM seminar_two.task.task3 getFilesInFolder
+INFO: Some message
+апр. 02, 2023 8:56:30 AM seminar_two.task.task3 getFilesInFolder
+INFO: Some message
+апр. 02, 2023 8:56:30 AM seminar_two.task.task3 getFilesInFolder
+INFO: Some message
+апр. 02, 2023 8:56:30 AM seminar_two.task.task3 getFilesInFolder
+INFO: Some message
+апр. 02, 2023 8:56:30 AM seminar_two.task.task3 writeFile
+INFO: Recorded! :)
+апр. 02, 2023 8:56:30 AM seminar_two.task.task3 writeFile
+INFO: Error!

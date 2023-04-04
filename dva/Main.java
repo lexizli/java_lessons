@@ -1,5 +1,5 @@
-package seminar_one;
-import seminar_one.task.*;
+package dva;
+import dva.task.*;
 
 
 public class Main {

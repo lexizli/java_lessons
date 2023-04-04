@@ -1,4 +1,4 @@
-package seminar_one.task;
+package dva.task;
 
 import java.util.Objects;
 import java.util.Scanner;
