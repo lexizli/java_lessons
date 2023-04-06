@@ -1,4 +1,4 @@
-package dva.task;
+package seminar_one.task;
 
 import java.util.Scanner;
 //import java.time.LocalDateTime;

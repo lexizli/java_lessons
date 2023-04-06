@@ -1,4 +1,4 @@
-package dva.task;
+package seminar_one.task;
 
 public class Task7 {
     

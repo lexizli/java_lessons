@@ -1,5 +1,7 @@
 //  Реализовать алгоритм сортировки слиянием
 
+// Этот вариант можно не считать, не понравился, показался некрасивым, хоть и работает.
+
 package homework3.tasks;
 
 import java.util.Arrays;
@@ -9,7 +11,7 @@ public class Task1 {
 
     public static void run() {
 
-        int[] wrkArray = new int[9];
+        int[] wrkArray = new int[7];
 
         wrkArray = fillArray(wrkArray);
         System.out.print("Unsorted ");
@@ -40,7 +42,10 @@ public class Task1 {
 //  sort array 
     public static int[] mergeSortInner(int[] buf1, int[] buf2, int first, int last) {
         System.out.println(" 42  first ->  " + first + " last -> " + last);
-        
+        System.out.println(arrayToString(buf1));
+        System.out.println(arrayToString(buf2));
+        System.out.println(45);
+
         if (first >= last - 1) {
             return buf1;
         }
@@ -49,7 +54,7 @@ public class Task1 {
         int[] sortedOne = mergeSortInner(buf1, buf2, first, mid);
         int[] sortedTwo = mergeSortInner(buf1, buf2, mid, last);
 
-        System.out.println("52 mid -> " + mid + " first ->  " + first + " last -> " + last);
+        System.out.println("55 mid -> " + mid + " first ->  " + first + " last -> " + last);
         System.out.println(arrayToString(sortedOne));
         System.out.println(arrayToString(sortedTwo));
 
@@ -57,20 +62,22 @@ public class Task1 {
 
         int ind1 = first;
         int ind2 = mid;
-        int destination = first;
         int[] result = sortedOne == buf1 ? buf2 : buf1;
+        System.out.println("64 result -> " + arrayToString(result));
+        System.out.println("65 mid/ind2 -> " + mid + "/" + ind2 
+        +" first/ind1 ->  " + first + "/" + ind1 + " last -> " + last);
         while (ind1 < mid && ind2 < last) {
-            result[destination++] = sortedOne[ind1] < sortedTwo[ind2] 
-            ? sortedOne[ind1++] : sortedTwo[ind2++];
+            result[first++] = sortedOne[ind1] < sortedTwo[ind2] ? sortedOne[ind1++] : sortedTwo[ind2++];
         }
 
         while(ind1 < mid) {
-            result[destination++] = sortedOne[ind1++];
+            result[first++] = sortedOne[ind1++];
         }
 
         while(ind2 < last) {
-            result[destination++] = sortedTwo[ind2++];
+            result[first++] = sortedTwo[ind2++];
         }
+        System.out.println("79 result -> " + arrayToString(result));
 
         return result;
     }
