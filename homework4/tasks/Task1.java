@@ -5,6 +5,7 @@
 
 package homework4.tasks;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class Task1 {
@@ -19,8 +20,10 @@ public class Task1 {
         forReverce.push("the ");
         forReverce.push("seashore...");      
 
-        System.out.println(forReverce.toString());
-        System.out.println(reverseLinkedList(forReverce).toString());         
+        System.out.println(forReverce);
+        // System.out.println(reverseLinkedList(forReverce).toString());    
+        Collections.reverse(forReverce);
+        System.out.println(forReverce);    
         
     }
 

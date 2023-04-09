@@ -4,13 +4,13 @@ import java.util.*;
  
 public class Ex001_HashMap {
     public static void main(String[] args) {
-        Map<Integer, String> db = new HashMap<>();
-        db.putIfAbsent(1, "один"); 
-        db.put(2, "два"); 
+        Map<String, String> db = new HashMap<>();
+        db.putIfAbsent("1", "один"); 
+        db.put("2", "два"); 
         db.put(null, "!null");
         db.put(null, "chushka"); 
         System.out.println(db); // {null=!null, 1=один, 2=два}
-        System.out.println(db.get(44));
+        System.out.println(db.get("44"));
         //db.remove(null); 
         System.out.println(db); // {1=один, 2=два}
         System.out.println(db.containsValue("один")); // true
