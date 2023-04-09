@@ -5,6 +5,6 @@ import homework1.task.*;
 public class Main {
     public static void main(String[] args) {
         
-        Task2b.run();
+        Task3.run();
     }
 }

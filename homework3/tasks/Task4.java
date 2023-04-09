@@ -4,6 +4,8 @@
 
 package homework3.tasks;
 
+import java.util.Arrays;
+
 public class Task4 {
     public static void run() {
 
@@ -21,7 +23,8 @@ public class Task4 {
         System.out.println("\nDifference —>\t\t" + arrayToString(arrDiffOne)
                 + "\n\nDifference 2 —>\t\t" + arrayToString(arrDiffTwo)
                 + "\n\nSymmetric Difference— —> "
-                + arrayToString(arrSymmDiff) + "\n");
+ //               + arrayToString(arrSymmDiff) + "\n");
+ + Arrays.toString(arrSymmDiff) + "\n");
 
     }
 
