@@ -1,22 +1,23 @@
+// *(HARD) 
+// Реализовать алгоритм пирамидальной сортировки (HeapSort).
+// Делайте по желанию.
+// 
+
 package homework5.tasks;
 
 import java.util.Arrays;
 
 public class Task3v1 {
-
-    public static int swopCount = 0;
+    public static final int SIZE_OF_ARRAY = 14;
 
     public static void run() {
 
-        // int[] wrkArray = { 10, 0, 52, -2, 17, 333, 1};
-        int[] wrkArray = { 15, -10, -5, 0, 5, 10, 2 };
+        int[] wrkArray = new int[SIZE_OF_ARRAY];
+        wrkArray = fillArray(wrkArray);
         int lenArray = wrkArray.length;
 
-        //
         System.out.println("Unsorted  \t" + Arrays.toString(wrkArray));
-
         sortHeap(wrkArray, lenArray);
-
         System.out.println("Sorted  \t" + Arrays.toString(wrkArray));
     }
 
@@ -24,51 +25,55 @@ public class Task3v1 {
 
         int temp;
         int aSize = lenArray - 1;
-        for (int i = ( lenArray / 2 ); i >= 0; i--) {
-
-            // System.out.println("27\t" + Arrays.toString(sArr) + "\tswopCount = " + swopCount);
+        for (int i = (lenArray / 2); i >= 0; i--) {
             heapify(sArr, i, aSize);
-            // System.out.println("29\t \t" + Arrays.toString(sArr) + "\tswopCount = " + swopCount);
         }
 
-        for (int i = aSize; i >= 0; i--) {
+        for (int j = aSize; j >= 0; j--) {
 
             temp = sArr[0];
             sArr[0] = sArr[aSize];
             sArr[aSize] = temp;
-            swopCount++;
-
             aSize--;
-            // System.out.println("40 \t" + Arrays.toString(sArr) + "\tswopCount = " + swopCount);
             heapify(sArr, 0, aSize);
-            // System.out.println("42\t \t" + Arrays.toString(sArr) + "\tswopCount = " + swopCount);
 
+        }
     }
-}
 
     private static void heapify(int[] myArray, int i, int heapSize) {
-        int iLeft = i * 2;
-        int iRight = i * 2 + 1;
+        int a = i * 2;
+        int b = i * 2 + 1;
         int largest;
 
-        if (iLeft <= heapSize && myArray[iLeft] > myArray[i]) {
-            largest = iLeft;
+        if (a <= heapSize && myArray[a] > myArray[i]) { // Here you can change sorting direction - 1
+            largest = a;
         } else {
             largest = i;
         }
 
-        if (iRight <= heapSize && myArray[iRight] > myArray[i]) {
-            largest = iRight;
+        if (b <= heapSize && myArray[b] > myArray[largest]) { // Here you can change sorting direction - 2
+            largest = b;
         }
 
         if (largest != i) {
             int temp = myArray[i];
             myArray[i] = myArray[largest];
             myArray[largest] = temp;
-            swopCount++;
 
             heapify(myArray, largest, heapSize);
         }
+
+    }
+
+    // fill integer array with random values
+    public static int[] fillArray(int[] myArray) {
+
+        int borders = myArray.length;
+
+        for (int i = 0; i < borders; i++) {
+            myArray[i] = (int) (Math.random() * borders * Math.pow(-1, i));
+        }
+        return myArray;
 
     }
 
