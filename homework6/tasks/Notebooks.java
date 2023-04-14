@@ -1,7 +1,8 @@
 package homework6.tasks;
 
+import java.util.Objects;
+
 public class Notebooks {
-    public int id;
     public String tradeMark;
     public String model;
     public String os;
@@ -45,12 +46,11 @@ public class Notebooks {
     // private int weightGramms;
 
     // Конструктор класса
-    public Notebooks( int id, String tradeMark, String model, String os, String resolution, String cpuModel, 
+    public Notebooks( String tradeMark, String model, String os, String resolution, String cpuModel, 
                                     String videoType, String videoModel, double screenSize, double width, double height, double length, 
                                     double price, int frequency, int cores, int threads, int memoryFrequency, int memorySizeMb, 
                                     int ssdSizeMb, int weightGramms) {
 
-        this.id = id;
         this.tradeMark = tradeMark;
         this.model = model;
         this.os = os;
@@ -73,14 +73,6 @@ public class Notebooks {
     }
 
     // Геттеры и сеттеры для всех полей класса
-
-    public int id() {
-        return id;
-    }
-
-    public void id(int id) {
-        this.id = id;
-    }
 
     public String getTradeMark() {
         return tradeMark;
@@ -239,8 +231,7 @@ public class Notebooks {
     @Override
     public String toString() {
         return "Notebooks \n" +
-                "Id —> " + id   +
-                "\ntradeMark = " + tradeMark  +
+                "tradeMark = " + tradeMark  +
                 ", model = " + model + 
                 ", screenSize = " + screenSize +
                 ", resolution = " + resolution  +
@@ -260,4 +251,37 @@ public class Notebooks {
                 ", length = " + length  +
                 ", price = " + price;
     }
-}
+    
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Notebooks)) return false;
+            Notebooks notebooks = (Notebooks) o;
+            return Double.compare(notebooks.screenSize, screenSize) == 0
+                    && Double.compare(notebooks.width, width) == 0
+                    && Double.compare(notebooks.height, height) == 0
+                    && Double.compare(notebooks.length, length) == 0
+                    && Double.compare(notebooks.price, price) == 0
+                    && frequency == notebooks.frequency
+                    && cores == notebooks.cores
+                    && threads == notebooks.threads
+                    && memoryFrequency == notebooks.memoryFrequency
+                    && memorySizeMb == notebooks.memorySizeMb
+                    && ssdSizeMb == notebooks.ssdSizeMb
+                    && weightGramms == notebooks.weightGramms
+                    && Objects.equals(tradeMark, notebooks.tradeMark)
+                    && Objects.equals(model, notebooks.model)
+                    && Objects.equals(os, notebooks.os)
+                    && Objects.equals(resolution, notebooks.resolution)
+                    && Objects.equals(cpuModel, notebooks.cpuModel)
+                    && Objects.equals(videoType, notebooks.videoType)
+                    && Objects.equals(videoModel, notebooks.videoModel);
+        }
+    
+        @Override
+        public int hashCode() {
+            return Objects.hash(tradeMark, model, os, resolution, cpuModel, videoType, videoModel, screenSize,
+                    width, height, length, price, frequency, cores, threads, memoryFrequency, memorySizeMb,  ssdSizeMb,  weightGramms);
+        }
+    }
+    
