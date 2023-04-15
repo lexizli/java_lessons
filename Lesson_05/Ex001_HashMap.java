@@ -1,7 +1,7 @@
 package Lesson_05;
 
 import java.util.*;
- 
+
 public class Ex001_HashMap {
     public static void main(String[] args) {
         Map<String, String> db = new HashMap<>();
