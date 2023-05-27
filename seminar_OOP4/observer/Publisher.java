@@ -8,6 +8,6 @@ public interface Publisher {
 
     void sendOffer(String nameCompany, double salary);
 
-    void sendOfferVacancy(String nameCompany, String nameVacancy, double salary, Enum vacancy);
+    void sendOfferVacancy(String nameCompany, String nameVacancy, double salary, VacancyType vacancy);
 
 }

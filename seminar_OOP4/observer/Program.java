@@ -1,7 +1,5 @@
 package seminar_OOP4.observer;
 
-import seminar_OOP4.observer.Company.VacancyType;
-
 public class Program {
 
     /**

@@ -13,14 +13,7 @@ public class Company {
     private String nameVacancy;
     private Publisher jobAgency;
 
-    public enum VacancyType{
-        PROGRAMMER,
-        PRESIDENT,
-        SERVER,
-        MOOVER
-    }
-
-    public Company(String nameCompany, double maxSalary, Publisher jobAgency) {
+      public Company(String nameCompany, double maxSalary, Publisher jobAgency) {
         this.nameCompany = nameCompany;
         this.maxSalary = maxSalary;
         this.jobAgency = jobAgency;
@@ -32,7 +25,7 @@ public class Company {
         this.maxSalary = maxSalary;
         this.jobAgency = jobAgency;
         this.nameVacancy = nameVacancy;
-        random = new Random();
+        // random = new Random();
     }
 
     public Company(String string, String string2, int i, JobAgency jobAgency2, VacancyType vacancy) {
@@ -45,8 +38,6 @@ public class Company {
 
     public void vacancy(VacancyType vacancy){
         double salary = maxSalary * random.nextDouble();
-        // VacancyType vacancy = VacancyType.SERVER;
-        
         jobAgency.sendOfferVacancy(nameCompany, nameVacancy, salary, vacancy);
     }
 

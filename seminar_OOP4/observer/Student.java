@@ -4,7 +4,7 @@ public class Student implements Observer {
 
     private String name;
     private double salary;
-    private static Enum vacancyType;
+    private static VacancyType vacancyType;
 
 
     public Student(String name) {
@@ -12,8 +12,8 @@ public class Student implements Observer {
         salary = 5000;
     }
 
-    public Student(String name, Enum vacancyType) {
-        this.vacancyType = vacancyType;
+    public Student(String name, VacancyType vacancyType) {
+        Student.vacancyType = vacancyType;
         this.name = name;
         salary = 5000;
     }
@@ -32,8 +32,9 @@ public class Student implements Observer {
     }
 
     @Override
-    public void receiveOfferVacancy(String nameCompany, String nameVacancy, double salary, Enum vacancyType) {
-        if (this.salary < salary &&  Student.vacancyType == vacancyType){
+    public void receiveOfferVacancy(String nameCompany, String nameVacancy, double salary, VacancyType vacancyType) {
+        if (Student.vacancyType == vacancyType){
+        if (this.salary < salary){
             System.out.printf("\tСтудент %s —> мне очень нужна эта вакансия!\t·%s - %,.0f·\n",
                     name, nameCompany, salary);
             this.salary = salary;
@@ -43,5 +44,10 @@ public class Student implements Observer {
                     name, nameCompany, salary);
         }
     }
+    else{
+            System.out.printf("——— Студент %s —> мне не подходит вакансия %s\n",  name, vacancyType);
+         }
+    }
+    
 
 }
