@@ -21,12 +21,12 @@ public class Student implements Observer {
     @Override
     public void receiveOffer(String nameCompany, double salary) {
         if (this.salary < salary){
-            System.out.printf("\tСтудент %s —> Мне нужна эта работа!\t·%s - %,.0f·\n",
+            System.out.printf("\tСтудент %s —> мне нужна эта работа!\t·%s - %,.0f·\n",
                     name, nameCompany, salary);
             this.salary = salary;
         }
         else{
-            System.out.printf("Студент %s — найду работу получше\t·%s - %,.0f·\n",
+            System.out.printf("Студент %s — найду работу получше\t\t·%s - %,.0f·\n",
                     name, nameCompany, salary);
         }
     }
@@ -34,7 +34,7 @@ public class Student implements Observer {
     @Override
     public void receiveOfferVacancy(String nameCompany, String nameVacancy, double salary, Enum vacancyType) {
         if (this.salary < salary &&  Student.vacancyType == vacancyType){
-            System.out.printf("\tСтудент %s —> Мне очень нужна эта вакансия!\t·%s - %,.0f·\n",
+            System.out.printf("\tСтудент %s —> мне очень нужна эта вакансия!\t·%s - %,.0f·\n",
                     name, nameCompany, salary);
             this.salary = salary;
         }

@@ -13,7 +13,7 @@ public class Company {
     private String nameVacancy;
     private Publisher jobAgency;
 
-    enum VacancyType{
+    public enum VacancyType{
         PROGRAMMER,
         PRESIDENT,
         SERVER,
@@ -43,9 +43,9 @@ public class Company {
         jobAgency.sendOffer(nameCompany, salary);
     }
 
-    public void vacancy(){
+    public void vacancy(VacancyType vacancy){
         double salary = maxSalary * random.nextDouble();
-        VacancyType vacancy = VacancyType.SERVER;
+        // VacancyType vacancy = VacancyType.SERVER;
         
         jobAgency.sendOfferVacancy(nameCompany, nameVacancy, salary, vacancy);
     }
