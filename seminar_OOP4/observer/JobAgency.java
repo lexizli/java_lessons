@@ -41,14 +41,10 @@ public class JobAgency implements Publisher {
     @Override
     public void sendOfferVacancy(String nameCompany, String nameVacancy, double salary, VacancyType vacancy) {
         for (Observer observer : observers){
-            observer.receiveOfferVacancy(nameCompany, nameVacancy, salary, vacancy);
+            if (observer instanceof VacancyObserver && ((VacancyObserver) observer).getVacancyType() == vacancy) {
+                observer.receiveOfferVacancy(nameCompany, nameVacancy, salary, vacancy);
+            }
         }
     }
 }
-
-
-
-
-
-
 

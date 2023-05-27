@@ -1,6 +1,6 @@
 package seminar_OOP4.observer;
 
-public class Flomaster implements Observer {
+public class Flomaster implements VacancyObserver {
 
     private String name;
     private double salary;
@@ -9,6 +9,11 @@ public class Flomaster implements Observer {
     public Flomaster(String name) {
         this.name = name;
         salary = 77777;
+    }
+
+    @Override
+    public VacancyType getVacancyType() {
+        return vacancyType;
     }
 
     public Flomaster(String name, VacancyType vacancyType) {

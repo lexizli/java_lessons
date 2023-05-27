@@ -8,5 +8,4 @@ public interface ViewObserver {
 
     void onChangeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name);
 
-  
 }

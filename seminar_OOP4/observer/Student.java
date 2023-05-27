@@ -1,6 +1,6 @@
 package seminar_OOP4.observer;
 
-public class Student implements Observer {
+public class Student implements VacancyObserver {
 
     private String name;
     private double salary;
@@ -16,6 +16,11 @@ public class Student implements Observer {
         Student.vacancyType = vacancyType;
         this.name = name;
         salary = 5000;
+    }
+
+    @Override
+    public VacancyType getVacancyType() {
+        return vacancyType;
     }
 
     @Override
