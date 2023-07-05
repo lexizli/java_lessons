@@ -44,85 +44,39 @@ public class ToyManager {
         }
     }
 
-// Сохраняем список игрушек в файл
-public void saveToys(String filename) {
-    try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
-        for (Toy toy : toys) {
-            writer.println(
-                    toy.getId() + ";" + toy.getName() + ";" + toy.getProbability() + ";" + toy.getQuantity());
+    // Сохраняем список игрушек в файл
+    public void saveToys(String filename) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
+            for (Toy toy : toys) {
+                writer.println(
+                        toy.getId() + ";" + toy.getName() + ";" + toy.getProbability() + ";" + toy.getQuantity());
+            }
+            System.out.println("Список игрушек успешно сохранен в файл " + filename);
+        } catch (IOException e) {
+            System.out.println("Ошибка при сохранении списка игрушек в файл.");
         }
-        System.out.println("Список игрушек успешно сохранен в файл " + filename);
-    } catch (IOException e) {
-        System.out.println("Ошибка при сохранении списка игрушек в файл.");
     }
-}
-
-    // // Метод для добавления новых игрушек в файл
-    // public void addNewToys(String filename) {
-
-    //     boolean ifWrite = true;
-
-    //     try (Scanner scanner = new Scanner(System.in);
-    //             PrintWriter writer = new PrintWriter(new FileWriter(filename, true))) {
-
-    //         String answer;
-    //         do {
-    //             System.out.print("Введите ID игрушки (0 — пропустить ввод игрушек): ");
-    //             int id = scanner.nextInt();
-    //             if (id == 0) {
-    //                 ifWrite = false;
-    //                 break;
-    //             }
-    //             scanner.nextLine(); // считываем символ новой строки
-
-    //             System.out.print("Введите наименование игрушки: ");
-    //             String name = scanner.nextLine();
-
-    //             System.out.print("Введите вероятность выигрыша игрушки: ");
-    //             double probability = scanner.nextDouble();
-    //             scanner.nextLine();
-
-    //             System.out.print("Введите количество игрушек: ");
-    //             int quantity = scanner.nextInt();
-    //             scanner.nextLine();
-
-    //             Toy toy = new Toy(id, name, probability, quantity);
-    //             toys.add(toy);
-    //             writer.println(
-    //                     toy.getId() + ";" + toy.getName() + ";" + toy.getProbability() + ";" + toy.getQuantity());
-
-    //             System.out.print("Хотите добавить еще игрушку? (1/0): ");
-    //             answer = scanner.nextLine();
-    //         } while (answer.equals("1"));
-
-    //         if (ifWrite) {
-    //             System.out.println("Игрушки успешно добавлены в файл " + filename);
-    //         }
-    //     } catch (IOException e) {
-    //         System.out.println("Ошибка при записи в файл.");
-    //     }
-    // }
 
     // добавление игрушек. Новый вариант с уникальным ID
     public void addNewToys(String filename) {
         boolean ifWrite = true;
         Set<Integer> ids = new HashSet<>(); // создаем HashSet для хранения уникальных ID
-    
+
         // Сначала считываем данные из файла и заполняем HashSet
         try (Scanner fileScanner = new Scanner(new File(filename))) {
             while (fileScanner.hasNextLine()) {
                 String line = fileScanner.nextLine();
                 String[] data = line.split(";");
-    
+
                 int id = Integer.parseInt(data[0]);
                 ids.add(id);
             }
         } catch (FileNotFoundException e) {
             System.out.println("Файл " + filename + " не найден.");
         }
-    
+
         try (Scanner scanner = new Scanner(System.in);
-             PrintWriter writer = new PrintWriter(new FileWriter(filename, true))) {
+                PrintWriter writer = new PrintWriter(new FileWriter(filename, true))) {
             String answer;
             answer = "1";
             do {
@@ -132,34 +86,35 @@ public void saveToys(String filename) {
                     ifWrite = false;
                     break;
                 }
-    
+
                 if (ids.contains(id)) {
                     System.out.println("Игрушка с таким ID уже существует. Попробуйте снова.");
                     continue;
                 }
                 ids.add(id);
-    
+
                 scanner.nextLine();
-    
+
                 System.out.print("Введите наименование игрушки: ");
                 String name = scanner.nextLine();
-    
+
                 System.out.print("Введите вероятность выигрыша игрушки: ");
                 double probability = scanner.nextDouble();
                 scanner.nextLine();
-    
+
                 System.out.print("Введите количество игрушек: ");
                 int quantity = scanner.nextInt();
                 scanner.nextLine();
-    
+
                 Toy toy = new Toy(id, name, probability, quantity);
                 toys.add(toy);
-                writer.println(toy.getId() + ";" + toy.getName() + ";" + toy.getProbability() + ";" + toy.getQuantity());
-    
+                writer.println(
+                        toy.getId() + ";" + toy.getName() + ";" + toy.getProbability() + ";" + toy.getQuantity());
+
                 System.out.print("Хотите добавить еще игрушку? (1/0): ");
                 answer = scanner.nextLine();
             } while (answer.equals("1"));
-    
+
             if (ifWrite) {
                 System.out.println("Игрушки успешно добавлены в файл " + filename);
 
@@ -194,11 +149,11 @@ public void saveToys(String filename) {
             System.out.println("Выберите параметр для редактирования:");
             System.out.println("1. Количество игрушек");
             System.out.println("2. Вероятность");
-   
+
             System.out.print("Введите номер параметра: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Считываем оставшийся символ новой строки
-   
+
             switch (choice) {
                 case 1:
                     System.out.print("Введите новое количество игрушек: ");
@@ -245,16 +200,16 @@ public void saveToys(String filename) {
         }
     }
 
-        // Сохраняем победителя розыгрыша в отдельный файл
-        public void saveWinnersToFile(String filename, Toy winner) {
-            try (PrintWriter writer = new PrintWriter(new FileWriter(filename, true))) {
-                if (winner != null) {
-                    writer.println(winner.getId() + ";" + winner.getName() + ";" + winner.getProbability() + ";"
-                            + winner.getQuantity());
-                    System.out.println("Победитель розыгрыша сохранен в файл " + filename);
-                }
-            } catch (IOException e) {
-                System.out.println("Ошибка при сохранении победителя розыгрыша.");
+    // Сохраняем победителя розыгрыша в отдельный файл
+    public void saveWinnersToFile(String filename, Toy winner) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(filename, true))) {
+            if (winner != null) {
+                writer.println(winner.getId() + ";" + winner.getName() + ";" + winner.getProbability() + ";"
+                        + winner.getQuantity());
+                System.out.println("Победитель розыгрыша сохранен в файл " + filename);
             }
+        } catch (IOException e) {
+            System.out.println("Ошибка при сохранении победителя розыгрыша.");
         }
+    }
 }

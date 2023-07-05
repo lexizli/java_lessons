@@ -28,9 +28,9 @@ public class Main {
                 switch (choice) {
                     case 1:
                         toyManager.addNewToys("toys.csv");
-                        while (scanner.hasNextLine()) { // Пропускаем все введенные строки
-                            scanner.nextLine();
-                        }
+                        // while (scanner.hasNextLine()) { // Пропускаем все введенные строки
+                        //     scanner.nextLine();
+                        // }
                         break;
                     case 2:
                         System.out.print("Введите ID игрушки, которую хотите отредактировать: ");
@@ -66,9 +66,9 @@ public class Main {
                         }
 
                 }
-            } else {
-                System.out.println("Некорректный выбор - 70. Повторите попытку.");
-                scanner.nextLine(); // Считываем оставшийся символ новой строки
+            // } else {
+            //     System.out.println("Некорректный выбор - 70. Повторите попытку.");
+            //     scanner.nextLine(); // Считываем оставшийся символ новой строки
             }
         }
     }
