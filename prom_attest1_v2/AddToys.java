@@ -29,6 +29,7 @@ public class AddToys {
                 int id = scanner.nextInt();
                 if (id == 0) {
                     ifWrite = false;
+                    scanner.nextLine();
                      break;
                 }
 

@@ -17,7 +17,9 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
+        int menuChoice = 5;
+
+        while (menuChoice != 0) {
             System.out.println("\nМеню:");
             System.out.println("1. Добавить новую игрушку");
             System.out.println("2. Редактировать данные игрушки (количество или вероятность) по ID");
@@ -26,14 +28,14 @@ public class Main {
             System.out.print("Выберите действие: ");
 
             if (scanner.hasNextInt()) { // Проверяем, есть ли ввод
-                int choice = scanner.nextInt();
+                menuChoice = scanner.nextInt();
                 scanner.nextLine(); // Считываем оставшийся символ новой строки
 
-                switch (choice) {
+                switch (menuChoice) {
                     case 1:
                     System.out.print("Case 1 selected ");
                         AddToys.addToys("toys.csv", toyManager);
-
+                        menuChoice = 5;
                         // while (scanner.hasNextLine()) { // Пропускаем все введенные строки
                         //     scanner.nextLine();
                         // }
@@ -79,7 +81,9 @@ public class Main {
             }
             else {
                 System.out.println("Некорректный выбор - 81. Повторите попытку.");
-                scanner.close();
+                        menuChoice = 5;
+
+                // scanner.close();
 
             }
         }
